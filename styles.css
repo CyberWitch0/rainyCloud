@@ -1,1 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:#1b1b1b;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+.container .cloud {
+    position: relative;
+    width: 320px;
+    height: 100px;
+    background: #fff;
+    border-radius: 100px;
+    filter:drop-shadow(8px 8px 0 #0005);
+    animation: animateCloud 2s steps(1) infinite;
+
+}
+
+@keyframes animateCloud {
+    0% {
+        filter:drop-shadow(8px 8px 0 #0001) drop-shadow(0 0 #fff);
+        brightness(1);
+    }
+    95% {
+        filter:drop-shadow(8px 8px 0 #0001) drop-shadow(0 0 50px #fff);
+         brightness(8);
+        
+    }
+}
+
+.container .cloud::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 40px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #484f59;
+    box-shadow: 90px -10px 0 30px #484f59;
+
+}
+
+.container .cloud::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #484f59;
+    border-radius: 100px;
+}
+
+.container .cloud .drop {
+    position: absolute;
+    top: 40px;
+    background: #05a2eb;
+    width: 2px;
+    height: 10px;
+    border-radius: 50%;
+    transform-origin: bottom;
+    animation: animate 2s linear infinite;
+
+
+}
+
+@keyframes animate {
+
+    0% {
+        transform: translateY(0) scaleY(1);
+    }
+    
+    70% {
+        transform: translateY(360px) scaleY(1);
+    }
+    
+    80% {
+        transform: translateY(360px) scaleY(0.2);
+    }
+
+    100% {
+        transform: translateY(360px) scaleY(0) scaleX(15);
+    }
+}
+
+
+.eye1 {
+    position: relative;
+    left: -190px;
+    border-radius: 100%;
+    background: #fff;
+    
+
+}
+
+
+.eye2 {
+    position: relative;
+    left: -140px;
+    border-radius: 100%;
+    background: #fff;
+    
+
+}
+
+.mouth {
+    position: relative;
+    top: 40px;
+    left: -215px;
+    border-radius: 100%;
+    background: radial-gradient(circle at 50% 80%, transparent 49%, #fff 50%);
+}
+
+
+.eye1, .eye2 {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to bottom right, #05a2eb, white);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 10);
+    animation: moveAnimation 3s linear infinite;
+   
+}
+
+.mouth {
+    width: 40px;
+    height: 30px;
+    animation: moveAnimation 3s linear infinite;
+    box-shadow: 0px -10px 10px rgba(0, 0, 0, 0);
+    background: radial-gradient(circle at 50% 80%, transparent 70%, rgb(4, 0, 0) 50%) 
+}
+
+@keyframes moveAnimation {
+    0%, 100% {
+        transform: translateY(7px);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
