@@ -40,7 +40,7 @@ body {
     }
     95% {
         filter:drop-shadow(8px 8px 0 #0001) drop-shadow(0 0 50px #fff);
-         brightness(10);
+         brightness(8);
         
     }
 }
@@ -101,8 +101,6 @@ body {
 .eye1 {
     position: relative;
     left: -190px;
-    width: 40px;
-    height: 40px;
     border-radius: 100%;
     background: #fff;
     
@@ -113,8 +111,6 @@ body {
 .eye2 {
     position: relative;
     left: -140px;
-    width: 40px;
-    height: 40px;
     border-radius: 100%;
     background: #fff;
     
@@ -123,13 +119,35 @@ body {
 
 .mouth {
     position: relative;
-    top: 50px;
-    left: -230px;
-    width: 40px;
-    height: 30px;
+    top: 40px;
+    left: -215px;
     border-radius: 100%;
-    background: #fff;
-    background: radial-gradient(circle at 50% 80%, transparent 49%, #fff 50%)
+    background: radial-gradient(circle at 50% 80%, transparent 49%, #fff 50%);
 }
 
 
+.eye1, .eye2 {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to bottom right, #05a2eb, white);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 10);
+    animation: moveAnimation 3s linear infinite;
+   
+}
+
+.mouth {
+    width: 40px;
+    height: 30px;
+    animation: moveAnimation 3s linear infinite;
+    background: radial-gradient(circle at 50% 80%, transparent 60%, rgb(4, 0, 0) 50%) 
+}
+
+@keyframes moveAnimation {
+    0%, 100% {
+        transform: translateY(7px);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
